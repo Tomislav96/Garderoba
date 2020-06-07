@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+
+<title>Pregled robe</title>
+
+    <link rel="stylesheet" href="">
+    <link rel="shortcut icon" href="icon.ico">
+	<style>
+		#body1{
+			background-color : #1A1919;
+			background-image : url("static/styles/images/pregled1.jpg");
+			background-position : center;
+			background-size : cover;
+		}
+		
+	</style>
+
+  </head>
+
+  <body id="body1">
+      
+<font size="3"><h1>Pregled trenutne robe</h1></font>
+
+
+<form method="POST" name="vform">
+<font size="5">
+    <table border="1" id="tablica" bgcolor="white">
+        <thead>
+        <tr>
+	    
+            <th>Odjeca</th>
+            <th>Velicina</th>
+	    <th>Vlasnik</th>
+            <th>Datum zaprimanja</th>
+	    <th>Obrisi</th>
+		
+        </tr>
+        </thead>
+        <tbody>
+            {% for row in value %} 
+                <tr>
+                    <td>{{row[1]}}</td>
+                    <td>{{row[2]}}</td>
+		    <td>{{row[3]}}</td>
+		    <td>{{row[4]}}</td>
+		    <td><button value={{row[0]}} name="ime">X</button></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</font>
+</form>
+
+<br>
+
+<form method="POST" name="vform1">
+<font size="5">
+    <table border="1" bgcolor="white">
+        <thead>
+        <tr>
+	    
+            <th>Obuca</th>
+            <th>Velicina</th>
+	    <th>Vlasnik</th>
+            <th>Datum zaprimanja</th>
+	    <th>Obrisi</th>
+		
+        </tr>
+        </thead>
+        <tbody>
+            {% for row in value1 %} 
+                <tr>
+                    <td>{{row[1]}}</td>
+                    <td>{{row[2]}}</td>
+		    <td>{{row[3]}}</td>
+		    <td>{{row[4]}}</td>
+		    <td><button value={{row[0]}} name="ime1" type="Submit">X</button></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</font>
+</form>
+
+<br>
+
+
+<button onclick="location.href = '/';" id="myButton" class="float-left submit-button" >Pocetna stranica</button>
+
+<button onclick="location.href = 'ormar';" id="myButton" class="float-left submit-button" >Dodaj odjecu u ormar</button>
+
+<button onclick="location.href = 'stalak';" id="myButton" class="float-left submit-button" >Dodaj obucu na stalak</button>
+
+
+
+
+  </body>
+
+ 
+
+
+
+</html>
