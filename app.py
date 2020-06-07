@@ -1,4 +1,4 @@
-from flask import Flask, Response, request, flash, render_template, current_app, redirect
+from flask import Flask, Response,jsonify, request, flash, render_template, current_app, redirect
 from baza import Ormar, Stalak_za_obucu
 import sqlite3
 import secrets
